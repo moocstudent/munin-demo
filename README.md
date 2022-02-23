@@ -14,3 +14,4 @@ column(参数集合名称),多个参数可指定为column="{claId=id,stuName=nam
 https://www.cnblogs.com/dreamyoung/p/11801950.html
 https://blog.csdn.net/dehui0506/article/details/102260796
 https://blog.csdn.net/lzxomg/article/details/89739651
+https://www.cnblogs.com/canger/p/9985986.html
