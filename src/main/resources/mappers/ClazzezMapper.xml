@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.ClazzezMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.demo.entity.Clazzez">
+        <result column="id" jdbcType="INTEGER" property="id"/>
+        <result column="cla_name" jdbcType="VARCHAR" property="claName"/>
+        <association property="banzhang" javaType="com.example.demo.entity.Student"
+                     select="com.example.demo.mapper.StudentMapper.getBanzhangByClaId"
+                     column="id">
+        </association>
+        <collection property="stuList" ofType="com.example.demo.entity.Student"
+                    select="com.example.demo.mapper.StudentMapper.getStuList"
+                    column="id">
+        </collection>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,cla_name
+    </sql>
+
+    <select id="listClazzList" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from clazzez
+    </select>
+
+</mapper>

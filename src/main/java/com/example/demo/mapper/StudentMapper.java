@@ -3,6 +3,7 @@ package com.example.demo.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.demo.entity.Student;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,4 +15,8 @@ import java.util.List;
 public interface StudentMapper extends BaseMapper<Student> {
 
     Integer insertList(List<Student> list);
+
+    Student getBanzhangByClaId(Long claId);
+
+    List<Student> getStuList(@Param("claId") Long claId);
 }

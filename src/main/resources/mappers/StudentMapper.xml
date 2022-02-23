@@ -5,10 +5,12 @@
     <resultMap id="BaseResultMap" type="com.example.demo.entity.Student">
         <result column="id" jdbcType="INTEGER" property="id"/>
         <result column="student_name" jdbcType="VARCHAR" property="studentName"/>
+        <result column="cla_id" property="claId"/>
+        <result column="is_leader" property="isLeader"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,student_name
+        id,student_name,cla_id,is_leader
     </sql>
 
     <insert id="insertList" parameterType="com.example.demo.entity.Student">
@@ -18,4 +20,15 @@
             (#{item.studentName})
         </foreach>
     </insert>
+
+    <select id="getBanzhangByClaId" resultType="com.example.demo.entity.Student">
+        select <include refid="Base_Column_List"/>
+        from student where cla_id = #{claId} and is_leader=1
+    </select>
+
+    <select id="getStuList" resultType="com.example.demo.entity.Student">
+        select <include refid="Base_Column_List"/>
+        from student where cla_id = #{claId} and is_leader=0
+    </select>
+
 </mapper>

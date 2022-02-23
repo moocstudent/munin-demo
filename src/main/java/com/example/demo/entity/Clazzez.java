@@ -6,26 +6,27 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @Author: Frank
- * @Date: 2022-02-21 21:13
+ * @Date: 2022-02-23 15:05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("student")
-public class Student implements Serializable {
+@TableName("clazzez")
+public class Clazzez implements Serializable {
 
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
 
-    private String studentName;
+    private String claName;
 
-    private Long claId; //班长has claId
+    private transient Student banzhang;
 
-    private Integer isLeader;
+    private transient List<Student> stuList;
 
 }
