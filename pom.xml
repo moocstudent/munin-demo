@@ -3,9 +3,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
-    <artifactId>mybatis-plus-demo</artifactId>
+    <artifactId>munin-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mybatis-plus-demo</name>
+    <name>munin-demo</name>
     <description>Demo project for Spring Boot with mybatis plus</description>
 
     <properties>
@@ -16,6 +16,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.qishenghe</groupId>
+            <artifactId>munin</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

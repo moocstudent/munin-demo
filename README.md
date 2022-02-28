@@ -9,6 +9,7 @@ association(联合),collection(集合)
 select(查询语句对应mapper的根名称),
 column(参数集合名称),多个参数可指定为column="{claId=id,stuName=name}"但是不能直接赋值
 
+2.启动后查看munin插件使用情况
 
 # Relevant Blogs:
 https://www.cnblogs.com/dreamyoung/p/11801950.html
